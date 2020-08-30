@@ -8,7 +8,7 @@ html,
 body {
 	height: 100vh;
 	font-size: 100%;
-	font-family: 'Crimson Text', serif;
+	font-family: 'Poppins', sans-serif;
 }
 
 .home {
@@ -16,11 +16,14 @@ body {
 	width: 100vw;
 	min-height: 100vh;
 	padding: 0 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .home video {
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -30,11 +33,15 @@ body {
 .container {
 	position: relative;
 	width: 100%;
-	min-height: 100vh;
+	height: 100%;
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	align-items: center;	
 	z-index: 10;
+}
+
+.container img {
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
 }
 
 .texts {
@@ -45,10 +52,8 @@ body {
 	flex-direction: column;
 }
 .texts h1 {
-	/*font-family: 'Merriweather', serif;*/
 	font-weight: 700;
-	font-size: 2.9rem;
-	text-shadow: 1px 1px 3px #6a0017;
+	font-size: 3.2rem;
 }
 
 .texts p {
@@ -59,24 +64,41 @@ body {
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 	text-align: justify;
 	margin: 30px 0;
+	font-style: italic;
+}
+
+.btns {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 .btn-journey {
 	display: inline-block;
 	color: #fff;
-	padding: 20px 50px;
+	width: 200px;
+	height: 60px;
 	border: 0;
 	outline: none;
-	background:  #0b2559;
+	background:  #000;
 	text-decoration: none;
-	border-radius: 5px;
-	font-weight: 400;
+	font-size: 1.1rem;
+	font-weight: 500;
 	letter-spacing: 1px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	transition: background .2s;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
 }
 
 .btn-journey:hover {
-	background:  #4678bc;
+	-webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px #000;
 }
 
 .overlay {
@@ -89,3 +111,46 @@ body {
 	mix-blend-mode: overlay;
 }
 
+
+@media(max-width: 320px) {
+	.container img {
+		width: 100%;
+	}
+} 
+
+@media(max-width: 900px) {
+	.home {
+		padding: 20px;
+	}
+
+	.container {
+		flex-direction: column;
+	}
+
+	.container .texts {
+		width: 90%;
+		margin: 30px 0;
+	}
+
+	.texts h1 {
+		font-size: 2rem;
+	}
+
+	.texts p {
+		font-size: 1.1rem;
+	}
+
+	.btns {
+		flex-direction: column;
+	}
+
+	.btn-journey {
+		width: 90%;
+		height: 65px;
+	}
+
+	.btn-journey:first-child {
+		margin-bottom: 30px;
+	}
+
+}
